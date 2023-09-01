@@ -1,4 +1,4 @@
-package com.shankarlohar.classroomquiz.ui.composables
+package com.shankarlohar.classroomquiz.ui.composables.teacher
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
