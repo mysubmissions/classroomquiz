@@ -21,7 +21,16 @@ fun NavGraph() {
             SignupScreen(navController)
         }
         composable("homeScreen") {
-            HomeScreen()
+            HomeScreen(navController)
+        }
+        composable("createQuizScreen") {
+            // Your CreateQuizScreen composable here
+        }
+        composable("leaderboardScreen/{quizName}") { backStackEntry ->
+            val quizName = backStackEntry.arguments?.getString("quizName")
+            LeaderboardScreen(quizName)
         }
     }
 }
+
+
