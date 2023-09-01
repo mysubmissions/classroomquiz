@@ -1,4 +1,4 @@
-package com.shankarlohar.classroomquiz.ui.composables
+package com.shankarlohar.classroomquiz.ui.composables.teacher
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
