@@ -7,7 +7,6 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -22,7 +21,6 @@ import androidx.compose.ui.unit.dp
 import com.shankarlohar.classroomquiz.ui.custom.CustomStyledTextField
 
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LoginScreen(
     onTeacherLoginClick: () -> Unit,
@@ -48,7 +46,7 @@ fun LoginScreen(
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(16.dp)
+                .padding(8.dp)
                 .border(
                     width = 1.dp,
                     color = Color.White,
@@ -71,9 +69,7 @@ fun LoginScreen(
                     onValueChange = { password = it },
                     label = "Teacher Password",
                     visualTransformation = PasswordVisualTransformation(),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(16.dp)
+
                 )
 
                 Button(
@@ -90,11 +86,12 @@ fun LoginScreen(
 
 
         var quizId by remember { mutableStateOf("") }
+        var studentId by remember { mutableStateOf("") }
 
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(16.dp)
+                .padding(8.dp)
                 .border(
                     width = 1.dp,
                     color = Color.White,
@@ -108,6 +105,12 @@ fun LoginScreen(
                     value = quizId,
                     onValueChange = { quizId = it },
                     label = "Enter the quiz id given by your teacher"
+                )
+
+                CustomStyledTextField(
+                    value = studentId,
+                    onValueChange = { studentId = it },
+                    label = "Enter your student Id"
                 )
 
                 Button(
