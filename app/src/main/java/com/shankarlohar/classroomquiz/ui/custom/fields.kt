@@ -39,7 +39,7 @@ fun CustomStyledTextField(
         ),
         modifier = modifier
             .fillMaxWidth()
-            .padding(16.dp)
+            .padding(8.dp)
             .clip(RoundedCornerShape(12.dp))
             .border(1.5.dp, borderColor, RoundedCornerShape(12.dp))
             .onFocusChanged {
