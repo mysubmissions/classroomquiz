@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "522075979494",
+    "project_id": "slia-cq",
+    "storage_bucket": "slia-cq.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522075979494:android:200839b6c35d22b7770527",
+        "android_client_info": {
+          "package_name": "com.shankarlohar.classroomquiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "522075979494-84q1r4edt84l93ttr0qpu9ia07ku0knb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzOKpih4LG8n8aAhaEd9uv2V95q_KnOmA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "522075979494-84q1r4edt84l93ttr0qpu9ia07ku0knb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
