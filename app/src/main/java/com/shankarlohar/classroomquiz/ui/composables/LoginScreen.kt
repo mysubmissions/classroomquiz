@@ -1,5 +1,6 @@
 package com.shankarlohar.classroomquiz.ui.composables
 
+import android.widget.Toast
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -15,9 +16,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.shankarlohar.classroomquiz.ui.composables.teacher.AuthViewModel
 import com.shankarlohar.classroomquiz.ui.custom.CustomStyledTextField
 
 
@@ -27,6 +31,9 @@ fun LoginScreen(
     onTeacherSignupClick: () -> Unit,
     onStartQuizAsStudentClick: () -> Unit
 ) {
+
+    val authViewModel: AuthViewModel = viewModel() // Get it using Hilt, Koin, or viewModel() from Compose
+    val context = LocalContext.current // for the Toast
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -73,7 +80,16 @@ fun LoginScreen(
                 )
 
                 Button(
-                    onClick = { onTeacherLoginClick() },
+                    onClick = {
+                        authViewModel.login(email, password,
+                            onLoginSuccess = {
+                                onTeacherLoginClick()  // Navigate or do something else
+                            },
+                            onLoginError = { errorMessage ->
+                                Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show()
+                            }
+                        )
+                    },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(16.dp)
